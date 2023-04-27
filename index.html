@@ -1,0 +1,348 @@
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>web vs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+ <link rel="stylesheet" href="first.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<div id="box">
+       <!--logo-->
+       <div class="hc_logo">
+              <img src="https://s.hcurvecdn.com/saps/webpresentation/logo.png" alt="logo" />
+      </div>
+       <!--dropdown-->
+       <form id="checkform">
+        <div class="flex2-container">
+            <div class="abc" style="margin-left: -150px;">
+               <div id="functionality" style=" margin-left:1%;  box-shadow: 0px 3px 3px 1px #ddd;border-radius:5px ">
+   
+        <label >Functionality</label><br>
+       <input type="checkbox" id="auto" name="Auto" value="Auto">
+       <label for="auto"> Auto</label><br>
+       <input type="checkbox" id="manual" name="Manual" value="Manual">
+       <label for="manual">Manual</label><br>
+       <input type="checkbox" id="automanual" name="Automanual" value="Automanual">
+       <label for="automanual">Auto + Manual</label>
+
+              </div> 
+                  <div id="ctr" style=" margin-left:1%;  box-shadow: 0px 3px 3px 1px #ddd;border-radius:5px ">
+                   <strong><span>CTR</span></strong><br>
+
+                   <input type="checkbox" id="ctr1" name="CTR1" value="0-0.5">
+                   <label for="0-0.5%"> 0-0.5%</label><br>
+                   <input type="checkbox" id="ctr2" name="CTR2" value="0.5-1">
+                   <label for="2">0.5-1%</label><br>
+                   <input type="checkbox" id="ctr3" name="CTR3" value="1-1.5">
+                   <label for="3">1-1.5%</label><br>
+                   <input type="checkbox" id="ctr4" name="CTR4" value="1.5-2">
+                   <label for="3">1.5-2%</label><br>
+                   <input type="checkbox" id="ctr5" name="CTR5" value="2-2.5">
+                   <label for="3">2-2.5%</label><br>
+
+ 
+              </div> 
+                <div id="dtime" style=" margin-left:1%;  box-shadow: 0px 3px 3px 1px #ddd;border-radius:5px ">
+                   <strong><span>Duration</span></strong><br>
+
+                   <input type="checkbox" id="time1" name="time1" value="8-10min" >
+                   <label for="1">8-10min</label><br>
+                   <input type="checkbox" id="time2" name="time2" value="10-12min">
+                   <label for="2">10-12min</label><br>
+                   <input type="checkbox" id="time3" name="time3" value="12-15min">
+                   <label for="3">12-15min</label><br>
+                   <input type="checkbox" id="time4" name="time4" value="15-20min">
+                   <label for="3">15-20min</label><br>
+
+
+              </div> 
+               <div id="dims" style=" margin-left:1%;  box-shadow: 0px 3px 3px 1px #ddd;border-radius:5px ">
+                   <strong><span>Choose dimensions</span></strong><br>
+   
+       <input type="checkbox" id="dim1" name="dim1" value="300x250">
+       <label for="1">300x250</label><br>
+       <input type="checkbox" id="dim2" name="dim2" value="300x600">
+       <label for="2">300x600</label><br>
+       <input type="checkbox" id="dim3" name="dim3" value="320x480">
+       <label for="3">320x480</label><br>
+       <input type="checkbox" id="dim4" name="dim4" value="480x320">
+       <label for="3">480x320</label><br>
+       <input type="checkbox" id="dim5" name="dim5" value="970x250">
+       <label for="3">970x250</label><br>
+     
+              </div> 
+              <button class="subbtn1" id="submit_id1" type="submit" name="submit">Go</button> 
+            </div>
+          </form>         
+<form method="get" id="dropform">      
+<div  class="xyz" style="margin-top: -56px;">
+  <div>
+      <select name="ad_formats" id="ad_formats">
+         <option value="">AD format type</option>
+      </select>
+  </div>
+
+  <div>
+    <select name="category" id="category">
+       <option value="">Category</option>
+    </select>
+  </div>
+
+  <div>
+    <select name="templates" id="templates">
+      <option value="">Templates</option>
+    </select>
+  </div>
+
+       <button class="subbtn" id="submit_id" type="submit" name="submit">Submit</button>
+       <button class="resets" id="resetbtn" type="reset" name="reset" value="Reset form">Reset</button>
+</div>    
+</form>
+
+</div>
+<div style="position: absolute;top: 130px;left: 503px;height: 400px;width: 600px;">
+<div id="sigma" style="position: absolute;left: 124px;"></div>
+<div id="adurls2" style="position: absolute;left: 124px;">
+<div class="previews">
+<div class="divs" id="div0"></div>
+<div class="divs" id="div1"></div>
+<div class="divs" id="div2"></div>
+<div class="divs" id="div3"></div>
+<div class="divs" id="div4"></div>
+<div class="divs" id="div5"></div>
+</div>
+
+</div>
+</div>
+ 
+     <!--carosuel-->
+     <!-- <div id="carr">
+      <div class="container">
+           <div  id="myCarousel" class="carousel slide" data-ride="carousel" data-wrap="false"  data-interval="false">
+          <ol class="carousel-indicators">
+      <li data-target="#slider" data-slide-to="0" class="active"></li>
+      <li data-target="#slider" data-slide-to="1"></li>
+      <li data-target="#slider" data-slide-to="2"></li>
+    
+  </ol>  
+                 <div class="carousel-inner">
+                      <div class="item active">
+              
+          <div style="position:relative;top:1px;left:2px;width:300px;height:250px;border-radius:13px;">
+              
+              <img style="position:absolute;top:0px;left:0px;width:300px;border-radius:13px;" src="https://s.hcurvecdn.com/atest/mocks/b.png">
+              </div> 
+          </div> 
+                      <div class="item">
+              <div style="position:relative;top:1px;left:2px;width:300px;height:250px;border-radius:13px;">
+                
+                <img  style="position:absolute;top:0px;left:0px;width:300px;border-radius:13px;" src="https://s.hcurvecdn.com/atest/mocks/c.png">
+                  
+              </div> 
+          </div> 
+                      <div class="item">
+              <div style="position:relative;top:1px;left:2px;width:300px;height:250px;border-radius:13px">
+                <img  style="position:absolute;top:0px;left:0px;width:300px;border-radius:13px" src="https://s.hcurvecdn.com/atest/mocks/d.png">
+              </div> 
+          </div> 
+          
+                 </div>
+
+                   <div class="carousel-control-prev arr1" href="#myCarousel" role="button" data-slide="prev" >
+                            <span class="carousel-control-prev-icon" aria-hidden="true"><img style="position:absolute;top:0px;left:0px; width:29px; height:29px;border-radius:13px;" src="https://s.hcurvecdn.com/atest/mocks/left-arrow.jpg">
+                                </span>
+                  </div>
+           
+                    <div class="carousel-control-next arr2" href="#myCarousel" role="button" data-slide="next" >
+                            <span class="carousel-control-next-icon" aria-hidden="true"><img style="position:absolute;top:0px;left:0px; width:29px; height:29px;border-radius:13px;" src="https://s.hcurvecdn.com/atest/mocks/right-arrow.png">
+         </span>
+
+        </div>
+  
+           </div>
+      </div>
+ </div>      -->
+<!--pagination-->
+
+
+<!-- <ul class="pagination pagination-lg">
+  <li class="page-item disabled">
+    <a class="page-link" href="#" tabindex="-1">1</a>
+  </li>
+  <li class="page-item"><a class="page-link" href="https://publisherplex.io/selfserve/webpresentation/second.php">2</a></li>
+  <li class="page-item"><a class="page-link" href="#">3</a></li>
+</ul> -->
+</nav>
+
+  
+</div>
+</div>
+</body>
+
+<script>
+
+ if( new URLSearchParams(window.location.search).get("templates") !== null ){
+  document.getElementById("adurls2").style.display = "none";
+ }else{
+  document.getElementById("adurls2").style.display = "block";
+ }
+
+ document.getElementById("resetbtn").addEventListener("click", function(){
+  // let url = window.location.href;
+  // let remove = url.split("?")[1];
+  // console.log(remove)
+ 
+ })
+
+ fetch('https://publisherplex.io/webpresentation/api.php')
+.then(response => response.json())
+.then(data => {
+
+  console.log(data)
+
+let uniqueValues = {};
+for (let i = 0; i < data.length; i++) {
+let adformatvalue = data[i]['ad_format'];
+if (!uniqueValues[adformatvalue]) {
+  uniqueValues[adformatvalue] = true;
+  document.getElementById("ad_formats").innerHTML += `<option  value=${adformatvalue}>${adformatvalue}</option>`; 
+}
+}
+
+
+document.getElementById("ad_formats").addEventListener("change", function(e){
+uniqueValues55  = {};
+document.getElementById("category").innerHTML = "<option value=''>Category</option>";
+for(let z in data){
+if(e.target.value == data[z].ad_format){
+  var catg = data[z].category;
+  
+  if(!uniqueValues55[catg]){
+    uniqueValues55[catg] = true;
+    document.getElementById("category").innerHTML += `<option value=${catg}>${catg}</option>`;
+  }
+   
+}
+}
+
+});
+
+document.getElementById("category").addEventListener("change", function(e){
+
+var adformat = document.getElementById("ad_formats").value;
+// document.getElementById("templates").innerHTML = "<option value=''>Templates</option>";
+let uniqueValues2 = {};
+for(let m in data){
+var catg = data[m].category;
+var ad2 = data[m].ad_format;
+if(e.target.value == catg && adformat == ad2){
+  var temp = data[m].template;
+  template2 = temp.replace(/\s+/g, '_');
+  if(!uniqueValues2[temp]){
+    uniqueValues2[temp] = true;
+    document.getElementById("templates").innerHTML += `<option value=${template2}>${temp}</option>`;
+  }
+  
+}
+}
+
+
+});
+
+
+
+
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get("templates")){
+  const templatesValue = urlParams.get("templates");
+var splits = templatesValue.replace(/_/g, " ");
+  document.getElementById("templates").innerHTML = `<option value=''>${splits}</option>`;
+if(urlParams.get("category")){
+  const catvalue = urlParams.get("category");
+  document.getElementById("category").innerHTML = `<option value=''>${catvalue}</option>`;
+}
+// if(urlParams.get("ad_formats")){
+//   const adforvalue = urlParams.get("ad_formats");
+//   document.getElementById("ad_formats").innerHTML = `<option value=''>${adforvalue}</option>`;
+// }
+const element = data.find(el => el.template === splits);
+const index = data.indexOf(element)
+
+var dynurl = data[index]['demo_link'];
+
+const url = new URL(dynurl);
+const zoneId = url.searchParams.get("zoneid");
+const [width1, height1] = zoneId.split("x"); 
+
+if(width1 > height1 || Number(width1) > Number(height1)){
+var scale_vl = 200/Number(width1);
+document.getElementById("sigma").style.transform=`scale(${scale_vl.toFixed(2)})`;
+}else{
+      var scale_vl = 200/Number(height1);
+      document.getElementById("sigma").style.transform=`scale(${scale_vl.toFixed(2)})`;
+}
+
+var iframe = document.createElement("iframe");
+iframe.src = dynurl + "&partner=dbm&optout=false&ct0=${CLICK_URL_ENC}&cb=${CACHEBUSTER}&dbmc=${CAMPAIGN_ID}";
+iframe.width = width1;
+iframe.height = height1;
+iframe.frameBorder = "0";
+iframe.scrolling = "no";
+document.getElementById("sigma").appendChild(iframe);
+}
+
+
+
+
+var element3 = document.getElementById("sigma");
+
+if(element3.innerHTML.trim().length > 0){
+// document.querySelector(".container").style.display = "none";
+}
+else{
+  // document.querySelector(".container").style.display = "block";
+}
+
+// for(let k=1;k<7;k++){
+//   document.getElementById("div"+k).innerHTML += "";
+// }
+
+
+var testaaray = [];
+if(urlParams.get("Auto")){
+ var funcvalue =  urlParams.get("Auto");
+
+ for(let z=0;z<data.length;z++){
+  if(funcvalue == data[z]['functionality']){
+var adurls =  data[z]['demo_link'];
+ testaaray.push(adurls);
+  }
+ }
+
+
+for(let r=0;r<6;r++){
+  var mulurl =  testaaray[r];
+const params = new URLSearchParams(new URL(mulurl).search);
+const zoneid = params.get("zoneid");
+const [width, height] = zoneid.split("x");
+
+document.getElementById("div"+r).innerHTML += '<iframe src="'+testaaray[r]+'"&partner=dbm&optout=false&ct0=${CLICK_URL_ENC}&cb=${CACHEBUSTER}&dbmc=${CAMPAIGN_ID}" frameborder="0" scrolling="no" width="'+width+'" height="'+height+'"></iframe>';
+
+}
+
+ 
+}
+
+ 
+});
+</script>
+

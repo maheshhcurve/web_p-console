@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head
+    ><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+       
+<style>
+.light-theme ul{
+  display: flex;
+  flex-diection: row;
+}
+#num li{
+  list-style-type: none;
+  margin: 10px 0px;
+  padding: 6px 10px;
+  border: 1px solid black;
+}
+
+.main{
+display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  margin: 100px 50px 0px 300px;
+}
+
+.post{
+    border:1px solid black;
+    height:250px;
+    width:300px;
+    overflow: hidden;
+}
+
+#num{
+    float: right;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+
+</style>
+       
+</head>
+<body>
+
+        <div class="main">
+            
+                <!-- <iframe  src=""&partner=dbm&optout=false&ct0=${CLICK_URL_ENC}&cb=${CACHEBUSTER}&dbmc=${CAMPAIGN_ID}" frameborder="0" scrolling="no" width="300px" height="250px"></iframe> -->
+            
+        </div>
+
+        <div id="num"></div>
+</body>
+<script>
+
+      fetch('https://publisherplex.io/webpresentation/api.php')
+  .then(response => response.json())
+  .then(data => {
+
+    for(let n=0;n<data.length;n++){
+        
+         document.querySelector(".main").innerHTML += `<div class="post">${data[n]['demo_link']}</div>`;
+        // document.querySelectorAll(".post")[n].innerHTML = `${data[n]['demo_link']}`;
+         //document.querySelectorAll(".post")[n].innerHTML = '<iframe  src=""&partner=dbm&optout=false&ct0=${CLICK_URL_ENC}&cb=${CACHEBUSTER}&dbmc=${CAMPAIGN_ID}" frameborder="0" scrolling="no" width="300px" height="250px"></iframe>';
+        //document.querySelector(".main").innerHTML += '<div class="post"><iframe src=""&partner=dbm&optout=false&ct0=${CLICK_URL_ENC}&cb=${CACHEBUSTER}&dbmc=${CAMPAIGN_ID}" frameborder="0" scrolling="no" width="300px" height="250px"></iframe></div>';
+        //document.querySelector(".main").innerHTML += '<div class="post"><iframe src="'+data[0]['demo_link']+'"&partner=dbm&optout=false&ct0=${CLICK_URL_ENC}&cb=${CACHEBUSTER}&dbmc=${CAMPAIGN_ID}" frameborder="0" scrolling="no" width="300px" height="250px"></iframe></div>';
+    }
+
+
+    var items = $(".main .post");
+          var numItems = items.length;
+          var perPage = 6;
+
+          items.slice(perPage).hide();
+
+          $('#num').pagination({
+               items: numItems,
+               itemsOnPage: perPage,
+               prevText: "",
+               nextText: "",
+               onPageClick: function (pageNumber) {
+                    var showFrom = perPage * (pageNumber - 1);
+                    var showTo = showFrom + perPage;
+                    items.hide().slice(showFrom, showTo).show();
+               }
+          });
+  });
+
+   
+</script>  
+
+   
+ 
+                         
+
+
+
+
+
